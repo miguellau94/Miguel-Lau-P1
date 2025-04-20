@@ -1,9 +1,47 @@
 ---
-title: "Projects"
+title: "Prompts"
+format: dashboard
 ---
 
-## Project 1
+# Prompt 1 
 
-## Project 2
+```{r}
+library(ggplot2)
+```
 
-## Project 3
+```{r}
+#| title: Highway vs city mileage
+ggplot(mpg, aes(x = cty, y = hwy)) + geom_point()
+```
+```{r}
+#| title: Drive Type
+ggplot(mpg, aes(x = drv)) + geom_bar()
+```
+
+# Essay on Shiny App
+
+```{r}
+library(shiny)
+```
+```{r}
+# Load the Shiny package
+library(shiny)
+
+# User Interface
+ui <- fluidPage(
+  titlePanel("What is Shiny?"),
+  
+  mainPanel(
+    h3("🧠 Shiny is..."),
+    p("Shiny is an R package that makes it easy to build interactive web apps using R."),
+    p("You can use Shiny to create dashboards, data visualizations, and interactive tools without needing to know HTML or JavaScript."),
+    p("This is a very simple example to show a message using Shiny!")
+  )
+)
+
+# Server 
+server <- function(input, output) {}
+
+# Run the App
+shinyApp(ui = ui, server = server)
+```
